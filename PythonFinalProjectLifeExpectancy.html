@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Life Expectancy and Social Determinants of Health</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="PythonFinalProjectLifeExpectancy_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/popper.min.js"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PythonFinalProjectLifeExpectancy_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PythonFinalProjectLifeExpectancy_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PythonFinalProjectLifeExpectancy_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PythonFinalProjectLifeExpectancy_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Life Expectancy and Social Determinants of Health</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Python Programming II Final Project</strong></p>
+<p>By Ronit Dey</p>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
+<p>This project explores the fundamental question of how economic and social development shape population health outcomes, using life expectancy at birth as the primary indicator. Life expectancy is a widely recognized proxy for overall well-being because it integrates the cumulative effects of healthcare systems, living conditions, education, and public policy. By combining World Bank datasets from 2000 through 2022, I investigated the relationships between life expectancy and four major predictors: GDP per capita, health spending per person, adult literacy rates, and total population size.</p>
+<p>My results confirm that life expectancy is not determined solely by biology but is deeply linked to socioeconomic conditions. Correlation analysis revealed strong associations between life expectancy and GDP per capita (r = 0.59), health spending (r = 0.58), and literacy rates (r = 0.81). In contrast, population size displayed almost no relationship with longevity (r = –0.03), suggesting that the scale of a country’s population matters far less than how its resources are distributed and invested. Scatterplots reinforced these findings, showing steep gains in longevity at low to middle levels of GDP and health spending, but diminishing returns at higher levels. Literacy, however, exhibited a nearly linear effect across the full distribution.</p>
+<p>Global trends over the study period show steady progress: average life expectancy rose by more than six years worldwide, while GDP per capita nearly doubled, health spending increased sharply, and literacy continued to climb. These results carry clear policy implications. For low- and middle-income countries, small improvements in income, healthcare investment, and educational access can generate disproportionately large health gains. For high-income countries, where returns on spending are flatter, attention must shift toward efficiency, equity, and addressing disparities.</p>
+<hr>
+</section>
+<section id="introduction-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-methodology">Introduction &amp; Methodology</h2>
+<section id="research-question-and-context" class="level3">
+<h3 class="anchored" data-anchor-id="research-question-and-context">Research Question and Context</h3>
+<p>The central research question for this project is:<br>
+<strong>How do education, income, healthcare spending, and population size influence life expectancy across countries from 2000–2022?</strong></p>
+<p>This question builds on decades of public health research suggesting that health outcomes cannot be explained by medical care alone. Instead, they are deeply shaped by social and economic contexts. For instance, the <strong>World Health Organization’s Commission on Social Determinants of Health (2008)</strong> identified education, income, and healthcare access as fundamental “causes of causes”, the upstream drivers of disease and mortality.</p>
+<p>As a former premedical student and now a MSHCA student at Heinz, our healthcare system has always facisnated me. Since I was little, I had always wanted to make an impact in health, improving people’s lives and giving them hope. This is the reason I chose this project. Specifically, my education has always taught me to focus on the science behind diseases. However, the world is more than just science. There are social factors at play, which I have become facisnated in and wanted to explore. ### Data Sources I collected datasets from the <strong>World Bank’s Open Data</strong>, which provides standardized, cross-national indicators. The specific datasets used were:<br>
+- <strong>Life Expectancy at Birth (years)</strong> – outcome variable<br>
+- <strong>GDP per Capita (current US<span class="math inline">\()** – economic resource measure
+- **Health Spending per Capita (current US\)</span>)</strong> – healthcare investment proxy<br>
+- <strong>Adult Literacy Rate (%)</strong> – education measure<br>
+- <strong>Total Population</strong> – demographic scale</p>
+<p>These datasets were chosen for their relevance to the research question, global coverage, and availability for the 2000–2022 period.</p>
+</section>
+<section id="data-cleaning-and-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning-and-preparation">Data Cleaning and Preparation</h3>
+<ol type="1">
+<li><strong>Filtering years</strong>: Only data from 2000 to 2022 were retained for consistency.<br>
+</li>
+<li><strong>Standardizing variables</strong>: Columns were renamed for readability (e.g., <code>SP.DYN.LE00.IN</code> → <code>life_expectancy</code>).<br>
+</li>
+<li><strong>Handling missing data</strong>: Rows missing any of the four predictor variables were dropped.<br>
+</li>
+<li><strong>Log transformations</strong>: GDP, health spending, and population were skewed by large country outliers, so a log scale was used for scatterplots.</li>
+</ol>
+<p>After cleaning, the merged dataset included over 6,000 country-year observations.</p>
+<div id="5d25afb6-1434-47ab-813c-18ba5c8aa396" class="cell" data-trusted="true" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sns.set_theme(context<span class="op">=</span><span class="st">"notebook"</span>, style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="dv">100</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> <span class="st">"data"</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>YEAR_MIN, YEAR_MAX <span class="op">=</span> <span class="dv">2000</span>, <span class="dv">2022</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f35d1b2f" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> Path(<span class="st">"/Users/ronitdey/Desktop/data"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_wb_csv(filename_or_pattern, indicator_name):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Loads a World Bank CSV by either exact filename or pattern.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    You can still call with 'data/...' or just a pattern.</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> filename_or_pattern.replace(<span class="st">"data/"</span>, <span class="st">""</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    matches <span class="op">=</span> <span class="bu">list</span>(DATA_DIR.glob(filename))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> matches:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">FileNotFoundError</span>(<span class="ss">f"No file found for </span><span class="sc">{</span>filename<span class="sc">}</span><span class="ss"> in </span><span class="sc">{</span>DATA_DIR<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(matches) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" Multiple matches for </span><span class="sc">{</span>filename<span class="sc">}</span><span class="ss">, using </span><span class="sc">{</span>matches[<span class="dv">0</span>]<span class="sc">.</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> matches[<span class="dv">0</span>]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(path, skiprows<span class="op">=</span><span class="dv">4</span>).rename(columns<span class="op">=</span>{<span class="st">"Country Name"</span>: <span class="st">"country"</span>})</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    year_cols <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> df.columns <span class="cf">if</span> c.isdigit()]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    tidy <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"country"</span>], value_vars<span class="op">=</span>year_cols,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                   var_name<span class="op">=</span><span class="st">"year"</span>, value_name<span class="op">=</span>indicator_name)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    tidy[<span class="st">"year"</span>] <span class="op">=</span> tidy[<span class="st">"year"</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b9d68302-cdd1-471f-b98d-47e6349b54d1" class="cell" data-trusted="true" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>life     <span class="op">=</span> load_wb_csv(<span class="st">"data/API_SP.DYN.LE00.IN_DS2_en_csv_v2_1217606.csv"</span>, <span class="st">"life_expectancy"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>gdp      <span class="op">=</span> load_wb_csv(<span class="st">"data/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_1217687.csv"</span>, <span class="st">"gdp_per_capita"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>health   <span class="op">=</span> load_wb_csv(<span class="st">"data/API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_1212837.csv"</span>, <span class="st">"health_spending"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>literacy <span class="op">=</span> load_wb_csv(<span class="st">"data/API_SE.ADT.LITR.ZS_DS2_en_csv_v2_1215770.csv"</span>, <span class="st">"literacy_rate"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pop      <span class="op">=</span> load_wb_csv(<span class="st">"data/API_SP.POP.TOTL_DS2_en_csv_v2_1217684.csv"</span>, <span class="st">"population"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"LE:"</span>, life.shape, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"GDP:"</span>, gdp.shape, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Health:"</span>, health.shape, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Literacy:"</span>, literacy.shape, </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pop:"</span>, pop.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LE: (17290, 3) GDP: (17290, 3) Health: (17290, 3) Literacy: (17290, 3) Pop: (17290, 3)</code></pre>
+</div>
+</div>
+<div id="0bcc6379-e397-4348-9008-ecc271a03370" class="cell" data-trusted="true" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> life.merge(gdp, on<span class="op">=</span>[<span class="st">"country"</span>,<span class="st">"year"</span>], how<span class="op">=</span><span class="st">"inner"</span>) <span class="op">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>         .merge(health, on<span class="op">=</span>[<span class="st">"country"</span>,<span class="st">"year"</span>], how<span class="op">=</span><span class="st">"inner"</span>) <span class="op">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         .merge(literacy, on<span class="op">=</span>[<span class="st">"country"</span>,<span class="st">"year"</span>], how<span class="op">=</span><span class="st">"left"</span>) <span class="op">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         .merge(pop, on<span class="op">=</span>[<span class="st">"country"</span>,<span class="st">"year"</span>], how<span class="op">=</span><span class="st">"inner"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only target years</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[(df[<span class="st">"year"</span>] <span class="op">&gt;=</span> YEAR_MIN) <span class="op">&amp;</span> (df[<span class="st">"year"</span>] <span class="op">&lt;=</span> YEAR_MAX)]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Final dataset shape:"</span>, df.shape)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Final dataset shape: (6118, 7)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">life_expectancy</th>
+<th data-quarto-table-cell-role="th">gdp_per_capita</th>
+<th data-quarto-table-cell-role="th">health_spending</th>
+<th data-quarto-table-cell-role="th">literacy_rate</th>
+<th data-quarto-table-cell-role="th">population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10640</th>
+<td>Aruba</td>
+<td>2000</td>
+<td>72.939000</td>
+<td>20681.023027</td>
+<td>NaN</td>
+<td>97.000000</td>
+<td>90588.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">10641</th>
+<td>Africa Eastern and Southern</td>
+<td>2000</td>
+<td>52.557342</td>
+<td>707.120378</td>
+<td>42.686416</td>
+<td>62.770100</td>
+<td>406156661.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10642</th>
+<td>Afghanistan</td>
+<td>2000</td>
+<td>55.005000</td>
+<td>174.930991</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>20130327.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">10643</th>
+<td>Africa Western and Central</td>
+<td>2000</td>
+<td>50.297983</td>
+<td>516.932316</td>
+<td>18.199851</td>
+<td>47.577381</td>
+<td>274968446.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10644</th>
+<td>Angola</td>
+<td>2000</td>
+<td>46.501000</td>
+<td>563.733796</td>
+<td>13.159986</td>
+<td>NaN</td>
+<td>16194869.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analysis-results" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-results">Analysis &amp; Results</h2>
+<section id="analytical-methods" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-methods">Analytical Methods</h3>
+<ul>
+<li><strong>Descriptive statistics</strong> to summarize central tendencies and distributions.<br>
+</li>
+<li><strong>Time-series line plots</strong> of global averages for each variable.<br>
+</li>
+<li><strong>Correlation matrix and heatmap</strong> to quantify bivariate associations.<br>
+</li>
+<li><strong>Scatterplots with regression lines</strong> to visualize pairwise relationships.<br>
+</li>
+<li><strong>Interpretive analysis</strong> based on theoretical frameworks (e.g., diminishing returns of income).</li>
+</ul>
+<div id="bdfd5932-a064-4195-b5b2-a127619df80e" class="cell" data-trusted="true" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe().<span class="bu">round</span>(<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          year  life_expectancy  gdp_per_capita  health_spending  \
+count  6118.00          6095.00         5938.00          5440.00   
+mean   2011.00            70.38        14479.40           920.43   
+std       6.63             8.62        22864.44          1661.56   
+min    2000.00            14.66          109.59             4.18   
+25%    2005.00            64.99         1506.40            63.41   
+50%    2011.00            71.86         4897.21           245.80   
+75%    2017.00            76.79        18209.39           795.63   
+max    2022.00            86.15       226052.00         12434.43   
+
+       literacy_rate    population  
+count        1784.00  6.095000e+03  
+mean           79.53  2.850850e+08  
+std            17.31  8.907024e+08  
+min            14.00  9.544000e+03  
+25%            65.90  1.425332e+06  
+50%            84.02  9.604924e+06  
+75%            94.24  5.968833e+07  
+max           100.00  7.990400e+09  </code></pre>
+</div>
+</div>
+<p>The dataset covers 2000–2022. Average life expectancy was 70.4 years, ranging from just 14.7 in fragile states to 86.1 in the healthiest countries. GDP per capita averaged $14,479 but varied dramatically—from as low as $110 to over $226,000. Health spending per person ranged from only $4 to more than $12,400. Literacy rates, reported for fewer years, averaged 79.5 percent but ranged from 14 percent to 100 percent. Populations spanned from tiny microstates of less than 10,000 people to countries exceeding 1.3 billion.</p>
+<div id="ca8f8d72" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute correlation matrix</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> df[[<span class="st">"life_expectancy"</span>, <span class="st">"gdp_per_capita"</span>, <span class="st">"health_spending"</span>, <span class="st">"literacy_rate"</span>, <span class="st">"population"</span>]].corr()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>sns.heatmap(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    corr, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, cmap<span class="op">=</span><span class="st">"RdBu_r"</span>, center<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    linewidths<span class="op">=</span><span class="fl">0.5</span>, linecolor<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    annot_kws<span class="op">=</span>{<span class="st">"size"</span>:<span class="dv">12</span>, <span class="st">"weight"</span>:<span class="st">"bold"</span>}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Correlation Matrix: Life Expectancy and Determinants"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>, pad<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">30</span>, ha<span class="op">=</span><span class="st">"right"</span>, fontsize<span class="op">=</span><span class="dv">11</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>, fontsize<span class="op">=</span><span class="dv">11</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="correlation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis">Correlation Analysis</h3>
+<p>The correlation matrix revealed:<br>
+- <strong>Life Expectancy &amp; Literacy Rate</strong>: r ≈ <strong>0.81</strong> (very strong positive).<br>
+- <strong>Life Expectancy &amp; GDP per Capita</strong>: r ≈ <strong>0.59</strong> (strong positive).<br>
+- <strong>Life Expectancy &amp; Health Spending</strong>: r ≈ <strong>0.58</strong> (strong positive).<br>
+- <strong>Life Expectancy &amp; Population</strong>: r ≈ –0.03 (no meaningful correlation).</p>
+<p>A heatmap of the correlations makes these patterns visually clear: education, income, and healthcare spending cluster tightly with life expectancy, while population stands apart with weak associations.</p>
+<div id="8e8c8242" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set style for all plots</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">"seaborn-v0_8-whitegrid"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">"notebook"</span>, font_scale<span class="op">=</span><span class="fl">1.2</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy vs GDP per Capita (log-x)</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"gdp_per_capita"</span>, y<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>:<span class="fl">0.5</span>, <span class="st">'color'</span>:<span class="st">'#2ca02c'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'#d62728'</span>, <span class="st">'linewidth'</span>:<span class="dv">2</span>}</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">"log"</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"GDP per Capita (current US$, log)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Life Expectancy (years)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Life Expectancy vs GDP per Capita (2000–2022)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy vs Health Spending per Person (log-x)</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"health_spending"</span>, y<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>:<span class="fl">0.5</span>, <span class="st">'color'</span>:<span class="st">'#ff7f0e'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'#d62728'</span>, <span class="st">'linewidth'</span>:<span class="dv">2</span>}</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">"log"</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Health Spending per Person (US$, log)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Life Expectancy (years)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Life Expectancy vs Health Spending (2000–2022)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy vs Literacy Rate (%)</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"literacy_rate"</span>, y<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>:<span class="fl">0.5</span>, <span class="st">'color'</span>:<span class="st">'#9467bd'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'#d62728'</span>, <span class="st">'linewidth'</span>:<span class="dv">2</span>}</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Adult Literacy Rate (%)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Life Expectancy (years)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Life Expectancy vs Literacy Rate (2000–2022)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy vs Population (log-x)</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"population"</span>, y<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>:<span class="fl">0.5</span>, <span class="st">'color'</span>:<span class="st">'#1f77b4'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'#d62728'</span>, <span class="st">'linewidth'</span>:<span class="dv">2</span>}</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">"log"</span>)</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Population (log)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Life Expectancy (years)"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Life Expectancy vs Population (2000–2022)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-8-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-8-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot-insights" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-insights">Scatterplot Insights</h3>
+<ol type="1">
+<li><p><strong>Life Expectancy vs GDP per Capita</strong>:<br>
+The scatterplot shows a classic “diminishing returns” curve. Countries with very low GDP (under $2,000 per person) see sharp gains in life expectancy as income rises. However, above $20,000 GDP per capita, the curve flattens — wealthy countries gain little in longevity despite rising income.</p></li>
+<li><p><strong>Life Expectancy vs Health Spending</strong>:<br>
+The relationship mirrors GDP: initial increases in healthcare spending are associated with dramatic health gains, but after ~$5,000 per person per year, returns diminish.</p></li>
+<li><p><strong>Life Expectancy vs Literacy Rate</strong>:<br>
+A nearly linear relationship — countries with literacy rates above 90% consistently report life expectancies over 70 years. Education appears to be the most reliable driver of longevity.</p></li>
+<li><p><strong>Life Expectancy vs Population</strong>:<br>
+No clear trend is visible. Both small countries (e.g., Iceland) and large countries (e.g., China) can have high or low life expectancies. Demographic scale does not predict longevity.</p></li>
+</ol>
+<div id="09660717" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute yearly global averages for each variable</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>global_means <span class="op">=</span> df.groupby(<span class="st">"year"</span>).agg({</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"life_expectancy"</span>: <span class="st">"mean"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gdp_per_capita"</span>: <span class="st">"mean"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"health_spending"</span>: <span class="st">"mean"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"literacy_rate"</span>: <span class="st">"mean"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}).reset_index()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>global_means.head()</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Time-series with consistent colors</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">"seaborn-v0_8-whitegrid"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">10</span>))</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"Global Trends in Life Expectancy and Determinants (2000–2022)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">0</span>].plot(global_means[<span class="st">'year'</span>], global_means[<span class="st">'life_expectancy'</span>], color<span class="op">=</span><span class="st">'#1f77b4'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">"Average Life Expectancy"</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">0</span>].set_ylabel(<span class="st">"Years"</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">1</span>].plot(global_means[<span class="st">'year'</span>], global_means[<span class="st">'gdp_per_capita'</span>], color<span class="op">=</span><span class="st">'#2ca02c'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">"Average GDP per Capita"</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>,<span class="dv">1</span>].set_ylabel(<span class="st">"US Dollars"</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">0</span>].plot(global_means[<span class="st">'year'</span>], global_means[<span class="st">'health_spending'</span>], color<span class="op">=</span><span class="st">'#ff7f0e'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">"Average Health Spending per Person"</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">0</span>].set_ylabel(<span class="st">"US Dollars"</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">1</span>].plot(global_means[<span class="st">'year'</span>], global_means[<span class="st">'literacy_rate'</span>], color<span class="op">=</span><span class="st">'#9467bd'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">"Average Literacy Rate"</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>,<span class="dv">1</span>].set_ylabel(<span class="st">"Percentage (%)"</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="PythonFinalProjectLifeExpectancy_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="time-series-insights" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-insights">Time Series Insights</h3>
+<p>Looking at the global averages of life expectancy, GDP per capita, health spending, literacy, and population between 2000 and 2022 provides several important observations:</p>
+<ol type="1">
+<li><strong>Life Expectancy</strong>
+<ul>
+<li>Global average life expectancy increased steadily from about <strong>67 years in 2000 to roughly 73 years in 2022</strong>.<br>
+</li>
+<li>This slow but consistent growth reflects improvements in health outcomes worldwide.</li>
+</ul></li>
+<li><strong>Economic Resources (GDP per capita)</strong>
+<ul>
+<li>Global average GDP per capita showed a strong upward trajectory, especially after the early 2000s.<br>
+</li>
+<li>Despite some fluctuations, the overall trend is clearly positive, reflecting rising global income levels.</li>
+</ul></li>
+<li><strong>Healthcare Spending</strong>
+<ul>
+<li>Average per capita health spending rose consistently, suggesting increasing investments in healthcare systems globally.<br>
+</li>
+<li>The upward slope was steady across the whole period, mirroring the improvements in life expectancy.</li>
+</ul></li>
+<li><strong>Education (Literacy Rate)</strong>
+<ul>
+<li>Literacy rates, while already relatively high in 2000, continued to improve gradually over the period.<br>
+</li>
+<li>The global average edged closer to full adult literacy, reinforcing the slow but steady progress in education worldwide.</li>
+</ul></li>
+<li><strong>Population Growth</strong>
+<ul>
+<li>The global population increased year by year, with averages rising continuously from <strong>about 6 billion in 2000 to nearly 8 billion in 2022</strong>.<br>
+</li>
+<li>Unlike other variables, population growth was steady and monotonic, without noticeable dips or slowdowns.</li>
+</ul></li>
+</ol>
+</section>
+<section id="takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="takeaway">Takeaway</h3>
+<p>The time-series analysis highlights <strong>parallel upward trends</strong> in life expectancy, income, health spending, and literacy rates at the global level. While these figures do not show differences between countries or regions, they clearly illustrate that on average, the world has grown healthier, wealthier, more educated, and more populous over the past two decades.</p>
+<div id="e503c6f5" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install plotly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<div class="ansi-escaped-output">
+<pre>Defaulting to user installation because normal site-packages is not writeable
+
+Collecting plotly
+
+  Downloading plotly-6.3.1-py3-none-any.whl (9.8 MB)
+
+     |████████████████████████████████| 9.8 MB 287 kB/s eta 0:00:01
+
+Collecting narwhals&gt;=1.15.1
+
+  Downloading narwhals-2.7.0-py3-none-any.whl (412 kB)
+
+     |████████████████████████████████| 412 kB 9.5 MB/s eta 0:00:01
+
+Requirement already satisfied: packaging in /Applications/Positron.app/Contents/Resources/app/extensions/positron-python/python_files/lib/ipykernel/py3 (from plotly) (25.0)
+
+Installing collected packages: narwhals, plotly
+
+<span class="ansi-yellow-fg">  WARNING: The script plotly_get_chrome is installed in '/Users/ronitdey/Library/Python/3.9/bin' which is not on PATH.
+
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
+
+Successfully installed narwhals-2.7.0 plotly-6.3.1
+
+<span class="ansi-yellow-fg">WARNING: You are using pip version 21.2.4; however, version 25.2 is available.
+
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.</span>
+
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+<div id="0d6d790f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>latest_year <span class="op">=</span> df.groupby(<span class="st">"country"</span>).agg({</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"life_expectancy"</span>: <span class="st">"last"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gdp_per_capita"</span>: <span class="st">"last"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"literacy_rate"</span>: <span class="st">"last"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"health_spending"</span>: <span class="st">"last"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"population"</span>: <span class="st">"last"</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>}).reset_index()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>latest_year.columns <span class="op">=</span> [<span class="st">"Country"</span>, <span class="st">"Life Expectancy"</span>, <span class="st">"GDP per Capita"</span>, <span class="st">"Literacy Rate"</span>, <span class="st">"Health Spending"</span>, <span class="st">"Population"</span>]</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Life Expectancy by Country </span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> px.choropleth(</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    latest_year,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"Life Expectancy"</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Viridis"</span>,</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Life Expectancy by Country (Most Recent Year)"</span>,</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>fig1.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">40</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>fig1.show()</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co"># GDP per Capita by Country </span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> px.choropleth(</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    latest_year,</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"GDP per Capita"</span>,</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Blues"</span>,</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"GDP per Capita by Country (Most Recent Year)"</span>,</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>fig2.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">40</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>fig2.show()</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Literacy Rate by Country </span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>fig3 <span class="op">=</span> px.choropleth(</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    latest_year,</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"Literacy Rate"</span>,</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"Country"</span>,</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"YlGnBu"</span>,</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Adult Literacy Rate by Country (Most Recent Year)"</span>,</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>fig3.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">40</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>fig3.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-17&gt;:15: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-17&gt;:28: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-17&gt;:41: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div id="01b68449" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># keep the latest year per country with required columns present</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> latest_per_country_with(df, required_cols):</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    tmp <span class="op">=</span> df.dropna(subset<span class="op">=</span>required_cols).sort_values([<span class="st">"country"</span>, <span class="st">"year"</span>])</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    latest <span class="op">=</span> tmp.groupby(<span class="st">"country"</span>).tail(<span class="dv">1</span>).copy()</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> latest</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Life Expectancy (color) vs GDP per Capita (bubble size)</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>gdp_latest <span class="op">=</span> latest_per_country_with(df, [<span class="st">"life_expectancy"</span>, <span class="st">"gdp_per_capita"</span>])</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>gdp_latest[<span class="st">"gdp_per_capita_clipped"</span>] <span class="op">=</span> gdp_latest[<span class="st">"gdp_per_capita"</span>].clip(upper<span class="op">=</span>gdp_latest[<span class="st">"gdp_per_capita"</span>].quantile(<span class="fl">0.98</span>))</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> px.scatter_geo(</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    gdp_latest,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"gdp_per_capita_clipped"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{<span class="st">"year"</span>: <span class="va">True</span>, <span class="st">"gdp_per_capita"</span>: <span class="st">":,.0f"</span>, <span class="st">"life_expectancy"</span>: <span class="st">":.1f"</span>},</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    size_max<span class="op">=</span><span class="dv">40</span>,</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">"natural earth"</span>,</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Viridis"</span>,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Life Expectancy (Color) vs GDP per Capita (Bubble Size)"</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>fig1.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">60</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>fig1.show()</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy (color) vs Health Spending (bubble size)</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>health_latest <span class="op">=</span> latest_per_country_with(df, [<span class="st">"life_expectancy"</span>, <span class="st">"health_spending"</span>])</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>health_latest[<span class="st">"health_spending_clipped"</span>] <span class="op">=</span> health_latest[<span class="st">"health_spending"</span>].clip(upper<span class="op">=</span>health_latest[<span class="st">"health_spending"</span>].quantile(<span class="fl">0.98</span>))</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> px.scatter_geo(</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>    health_latest,</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"health_spending_clipped"</span>,</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{<span class="st">"year"</span>: <span class="va">True</span>, <span class="st">"health_spending"</span>: <span class="st">":,.0f"</span>, <span class="st">"life_expectancy"</span>: <span class="st">":.1f"</span>},</span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>    size_max<span class="op">=</span><span class="dv">40</span>,</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">"natural earth"</span>,</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"YlOrRd"</span>,</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Life Expectancy (Color) vs Health Spending per Person (Bubble Size)"</span></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>fig2.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">60</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>fig2.show()</span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Life Expectancy (color) vs Literacy Rate (bubble size)</span></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>lit_latest <span class="op">=</span> latest_per_country_with(df, [<span class="st">"life_expectancy"</span>, <span class="st">"literacy_rate"</span>])</span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>fig3 <span class="op">=</span> px.scatter_geo(</span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a>    lit_latest,</span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>    locationmode<span class="op">=</span><span class="st">"country names"</span>,</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"life_expectancy"</span>,</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"literacy_rate"</span>,</span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{<span class="st">"year"</span>: <span class="va">True</span>, <span class="st">"literacy_rate"</span>: <span class="st">":.1f"</span>, <span class="st">"life_expectancy"</span>: <span class="st">":.1f"</span>},</span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>    size_max<span class="op">=</span><span class="dv">35</span>,  </span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">"natural earth"</span>,</span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"Blues"</span>,</span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Life Expectancy (Color) vs Adult Literacy Rate (Bubble Size)"</span></span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a>fig3.update_layout(margin<span class="op">=</span>{<span class="st">"r"</span>:<span class="dv">0</span>,<span class="st">"t"</span>:<span class="dv">60</span>,<span class="st">"l"</span>:<span class="dv">0</span>,<span class="st">"b"</span>:<span class="dv">0</span>})</span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>fig3.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-16&gt;:11: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-16&gt;:31: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;positron-console-cell-16&gt;:50: DeprecationWarning:
+
+The library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+</section>
+<section id="global-spatial-analysis-life-expectancy-and-its-determinants" class="level3">
+<h3 class="anchored" data-anchor-id="global-spatial-analysis-life-expectancy-and-its-determinants">Global Spatial Analysis: Life Expectancy and Its Determinants</h3>
+<p>The combination of choropleth and bubble maps offers a detailed geographic perspective on how life expectancy relates to income, health spending, and education across the world. These maps reveal both the absolute distribution of each indicator and the relational patterns between socioeconomic factors and health outcomes.</p>
+</section>
+<section id="life-expectancy-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="life-expectancy-distribution">1. Life Expectancy Distribution</h3>
+<p>The choropleth map of Life Expectancy by Country confirms a clear global divide. The highest life expectancies—typically above 80 years—are concentrated in Western Europe, North America, Oceania, and East Asia. Conversely, much of Sub-Saharan Africa continues to face life expectancies below 60 years. This divide mirrors underlying differences in healthcare access, infrastructure, education, and economic stability. Countries with long-standing investments in public health and social welfare systems consistently achieve higher longevity.</p>
+</section>
+<section id="gdp-per-capita-and-longevity" class="level3">
+<h3 class="anchored" data-anchor-id="gdp-per-capita-and-longevity">2. GDP per Capita and Longevity</h3>
+<p>The Life Expectancy vs.&nbsp;GDP per Capita bubble map visually reinforces the economic-health relationship. Countries with larger bubbles (high GDP per capita) such as the United States, Canada, Western European nations, Japan, and Australia—are also shaded in lighter yellow tones, indicating higher life expectancy. By contrast, much of Africa and parts of South Asia display smaller bubbles and darker shades, reflecting both low GDP and lower life expectancy. This global pattern suggests that national wealth strongly influences life expectancy, especially at lower income levels, where each incremental gain in GDP translates into significant improvements in living standards, nutrition, sanitation, and healthcare.</p>
+</section>
+<section id="health-spending-and-longevity" class="level3">
+<h3 class="anchored" data-anchor-id="health-spending-and-longevity">3. Health Spending and Longevity</h3>
+<p>The Life Expectancy vs.&nbsp;Health Spending map deepens this picture by highlighting how investment in healthcare correlates with longer lives. Larger bubbles, indicating higher per capita health spending, are again concentrated in North America, Europe, and Oceania. These nations not only spend more but also achieve the world’s highest life expectancies. However, some middle-income countries (e.g., parts of Latin America and Eastern Europe) show moderate spending with comparable life expectancies, implying that efficiency and equity in spending may matter as much as total expenditure. The visual overlap of low spending and short life spans across much of Africa underscores the persistent healthcare financing gap in developing regions.</p>
+</section>
+<section id="literacy-and-longevity" class="level3">
+<h3 class="anchored" data-anchor-id="literacy-and-longevity">4. Literacy and Longevity</h3>
+<p>The Life Expectancy vs.&nbsp;Adult Literacy Rate map reveals education’s pivotal role in global health. Countries with high literacy rates (larger, darker blue bubbles) consistently exhibit higher life expectancies. This is particularly evident across Europe, East Asia, and South America, where literacy approaches 100%. Meanwhile, regions with smaller, lighter bubbles—especially in Central and Western Africa—show both lower literacy and shorter life spans.<br>
+The relationship is strikingly linear: as literacy increases, so does life expectancy, which is what we have shown previously through scatterplots. This emphasizes that education extends beyond cognitive skills and that it empowers individuals to make informed health decisions, understand medical information, and access preventive care.</p>
+</section>
+<section id="global-inequality-and-policy-implications" class="level3">
+<h3 class="anchored" data-anchor-id="global-inequality-and-policy-implications">6. Global Inequality and Policy Implications</h3>
+<p>The geographic clustering of health and wealth highlights ongoing global inequities. Even though life expectancy has risen overall since 2000, the pace of improvement is uneven.<br>
+- Economic inequality means many nations still lack the fiscal capacity for universal healthcare or quality education.<br>
+- Educational disparities perpetuate health gaps, especially for women and rural populations.<br>
+- Health investment efficiency varies. Some middle-income nations achieve relatively high life expectancy despite moderate spending, indicating that policy design and system efficiency are critical.</p>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<section id="key-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-insights">Key Insights</h3>
+<p>The results provide strong evidence that <strong>education, income, and healthcare spending are structural drivers of health outcomes</strong>, while population size is not.</p>
+<ol type="1">
+<li><p><strong>Education as a cornerstone</strong>: The tight relationship between literacy and life expectancy reinforces the importance of education as both a direct determinant (through health literacy, family planning, disease prevention) and an indirect one (via employment and income opportunities).</p></li>
+<li><p><strong>Wealth and health are linked — but not indefinitely</strong>: Rising GDP improves nutrition, housing, and healthcare access, but after a point, additional wealth does not translate into longer lives. This supports the concept of a “health plateau” in high-income countries.</p></li>
+<li><p><strong>Healthcare spending yields rapid gains in low-resource settings</strong>: Countries with minimal health budgets can make the largest relative improvements. Every additional $100 spent per capita in poorer regions yields large life expectancy benefits.</p></li>
+<li><p><strong>Population scale is not destiny</strong>: Despite concerns that high population growth harms health, the data show no direct correlation. Governance, equity, and public investment matter more than size alone.</p></li>
+</ol>
+</section>
+<section id="alignment-with-literature" class="level3">
+<h3 class="anchored" data-anchor-id="alignment-with-literature">Alignment with Literature</h3>
+<p>These findings align with the <strong>Social Determinants of Health framework</strong> and with empirical research showing that education and income drive health outcomes globally. They also echo work in development economics (e.g., Preston Curve) showing nonlinear returns of income to health.</p>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<ul>
+<li><strong>Data quality</strong>: Literacy rate data were incomplete for certain countries, reducing sample size.<br>
+</li>
+<li><strong>National averages</strong>: Country-level indicators mask internal inequalities (urban vs rural, gender disparities).<br>
+</li>
+<li><strong>Causality</strong>: This analysis is correlational. Further econometric models such as fixed effects regressions would be needed to establish causal pathways.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>This project set out to examine how life expectancy is related to several key social determinants of health using World Bank data from 2000 to 2022. By combining exploratory time-series analysis, correlation matrices, and scatterplots with regression lines, I was able to assess the influence of income, health spending, education, and population on longevity.</p>
+<p>The results show a clear picture:</p>
+<ul>
+<li><strong>Life expectancy has steadily increased worldwide</strong>, from an average of ~67 years in 2000 to ~73 years in 2022.</li>
+<li><strong>Education is the strongest driver</strong>: Adult literacy rate exhibited the highest correlation (r ≈ 0.81) with life expectancy, underscoring the direct and indirect role of education in promoting health.</li>
+<li><strong>Economic resources are essential but show diminishing marginal returns</strong>: GDP per capita (r ≈ 0.59) and health spending per capita (r ≈ 0.58) both improve life expectancy, especially at low levels, but wealthy countries cluster at the top, suggesting that other factors limit gains at high income levels.</li>
+<li><strong>Population size is not a predictor</strong>: With almost no correlation (r ≈ –0.03), demographic scale by itself does not determine health outcomes. Governance, policy, and distribution of resources are more decisive.</li>
+<li>The <strong>parallel upward trends</strong> across all key indicators suggest that global development has broadly benefited health over the past two decades, though this analysis, being based on averages, cannot capture inequalities within or between countries.</li>
+</ul>
+<p>In short, the study confirms the <strong>Social Determinants of Health framework</strong>: longevity is shaped less by medicine alone and more by upstream investments in education, economic growth, and healthcare systems.</p>
+<hr>
+</section>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<p>Drawing from these findings, several recommendations emerge for policymakers, international organizations, and public health practitioners:</p>
+<section id="invest-in-universal-education" class="level3">
+<h3 class="anchored" data-anchor-id="invest-in-universal-education">1. Invest in Universal Education</h3>
+<p>Since literacy shows the strongest relationship with life expectancy, expanding access to quality education should be a top priority. Education equips individuals with health knowledge, decision-making skills, and access to better economic opportunities. Investments in <strong>primary and secondary schooling, adult education programs, and closing gender gaps</strong> in education are particularly important.</p>
+</section>
+<section id="target-healthcare-spending-where-it-matters-most" class="level3">
+<h3 class="anchored" data-anchor-id="target-healthcare-spending-where-it-matters-most">2. Target Healthcare Spending Where It Matters Most</h3>
+<p>The data suggest that every additional dollar spent on health has the greatest marginal benefit in low- and middle-income countries. Policymakers should focus on expanding <strong>basic primary care, vaccinations, maternal health, and affordable medications</strong> in under-resourced areas. For high-income countries already at the health plateau, improving efficiency and equity of healthcare delivery may matter more than increasing spending.</p>
+</section>
+<section id="promote-inclusive-economic-growth" class="level3">
+<h3 class="anchored" data-anchor-id="promote-inclusive-economic-growth">3. Promote Inclusive Economic Growth</h3>
+<p>Rising GDP per capita is strongly linked to better health, but only when the benefits are shared broadly. Countries should aim for <strong>growth strategies that reduce poverty and inequality</strong>, ensuring that economic expansion translates into improved nutrition, housing, sanitation, and healthcare access for all citizens.</p>
+</section>
+<section id="do-not-overemphasize-population-control" class="level3">
+<h3 class="anchored" data-anchor-id="do-not-overemphasize-population-control">4. Do Not Overemphasize Population Control</h3>
+<p>The negligible correlation between population size and life expectancy suggests that demographic scale alone is not a barrier to health. Instead, policies should focus on <strong>equitable distribution of resources, governance, and health system strengthening</strong>, rather than treating population growth as the primary health challenge.</p>
+</section>
+<section id="integrate-health-policy-with-education-and-economic-policy" class="level3">
+<h3 class="anchored" data-anchor-id="integrate-health-policy-with-education-and-economic-policy">5. Integrate Health Policy with Education and Economic Policy</h3>
+<p>Because the drivers of life expectancy are cross-sectoral, ministries of health cannot act alone. Governments should create <strong>integrated policies</strong> that connect education, labor markets, economic planning, and healthcare systems. This “whole-of-government” approach ensures that health improvements are embedded into broader social development strategies.</p>
+<hr>
+</section>
+</section>
+<section id="future-directions" class="level2">
+<h2 class="anchored" data-anchor-id="future-directions">Future Directions</h2>
+<p>While this project highlights robust correlations, future work should go further: - <strong>Causal modeling</strong>: Apply regression analysis, fixed-effects models, or instrumental variables to better isolate the causal impact of each determinant. - <strong>Regional comparisons</strong>: Disaggregate the data by income groups or regions to identify context-specific dynamics (e.g., Sub-Saharan Africa vs.&nbsp;East Asia). - <strong>Equity-focused indicators</strong>: Incorporate inequality measures (urban–rural gaps, gender disparities) to reveal hidden variation masked by country averages. - <strong>Policy evaluation</strong>: Link data to specific reforms (such as universal primary education campaigns or healthcare coverage expansions) to assess their measurable impact on health outcomes.</p>
+<hr>
+<section id="final-thought" class="level3">
+<h3 class="anchored" data-anchor-id="final-thought">Final Thought</h3>
+<p>The overarching lesson of this analysis is that <strong>longevity is built on social foundations</strong>. Countries that educate their populations, invest in healthcare, and ensure inclusive prosperity achieve longer, healthier lives for their citizens. While medicine cures disease, it is education, equity, and economic opportunity that sustain health across generations.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
